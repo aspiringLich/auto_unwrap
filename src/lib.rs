@@ -7,7 +7,7 @@
 ///!
 ///! Have you every written a function and were too lazy to have it return `Result<T, E>` but still wanted to use the `?` operator? I present to you:
 ///!
-///! ```rs
+///! ```
 ///! use auto_unwrap::auto_unwrap;
 ///!
 ///! #[auto_unwrap]
@@ -23,7 +23,7 @@
 ///!
 ///! Is there someplace you would like to keep the `?`?
 ///!
-///! ```rs
+///! ```
 ///! use auto_unwrap::auto_unwrap;
 ///!
 ///! #[auto_unwrap]

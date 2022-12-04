@@ -2,7 +2,7 @@
 
 Have you every written a function and were too lazy to have it return `Result<T, E>` but still wanted to use the `?` operator? I present to you:
 
-```rs
+```rust
 use auto_unwrap::auto_unwrap;
 
 #[auto_unwrap]
@@ -18,7 +18,7 @@ assert_eq!(fn_1(), 23);
 
 Is there someplace you would like to keep the `?`?
 
-```rs
+```rust
 use auto_unwrap::auto_unwrap;
 
 #[auto_unwrap]
