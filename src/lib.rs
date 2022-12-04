@@ -100,15 +100,20 @@ fn unwrap_inner(input: TokenStream) -> TokenStream {
 /// use auto_unwrap::auto_unwrap;
 ///
 /// #[auto_unwrap]
-/// fn fn_2() -> Result<i32, i32> {
-///     #[skip_auto_default]
-///     let x: i32 = Ok::<i32, i32>(23)?; // ignores up to (and including) the next semicolon or brace group
-///     #[skip_auto_default]
-///     let y: i32 = Err::<i32, i32>(23)?;
-///     Ok(2)
-/// }
+/// fn fn_2() {
+///     #[skip_auto_default] // skips until (and including) the next brace-delimited group or semicolon
+///     let closure = || -> Result<u32, f32> {
+///         let ok: Result<u32, f32> = Ok(1);
+///         assert_eq!(ok?, ok.unwrap());
 ///
-/// assert_eq!(fn_2(), Err::<i32, i32>(23));
+///         let err: Result<u32, f32> = Err(2.0);
+///         assert_eq!(err?, err.unwrap()); // without the skip this would panic!
+///
+///         Ok(2)
+///     };
+///
+///     assert_eq!(closure(), Err(2.0));
+/// }
 /// ```
 #[proc_macro_attribute]
 pub fn auto_unwrap(_args: TokenStream, input: TokenStream) -> TokenStream {
