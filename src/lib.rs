@@ -28,7 +28,7 @@
 ///!
 ///! #[auto_unwrap]
 ///! fn fn_2() {
-///!     #[skip_auto_default] // skips until (and including) the next brace-delimited group or semicolon
+///!     #[skip_auto_unwrap] // skips until (and including) the next brace-delimited group or semicolon
 ///!     let closure = || -> Result<u32, f32> {
 ///!         let ok: Result<u32, f32> = Ok(1);
 ///!         assert_eq!(ok?, ok.unwrap());
@@ -65,7 +65,7 @@ fn is_skip(iter: &mut std::iter::Peekable<impl Iterator<Item = TokenTree>>) -> b
     if let Some((delimiter, stream)) = unwrap_group(iter.peek().expect(TERLY)) && delimiter == Delimiter::Bracket{
         // consume the peek for real
         iter.next();
-        stream.to_string() == "skip_auto_default"
+        stream.to_string() == "skip_auto_unwrap"
     } else {
         false
     }

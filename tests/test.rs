@@ -19,7 +19,7 @@ fn panic_test() {
 #[test]
 #[auto_unwrap]
 fn ignore_test() {
-    #[skip_auto_default]
+    #[skip_auto_unwrap]
     let closure = || -> Result<u32, f32> {
         let ok: Result<u32, f32> = Ok(1);
         assert_eq!(ok?, ok.unwrap());
@@ -35,7 +35,7 @@ fn ignore_test() {
 #[test]
 #[auto_unwrap]
 fn skip_test() {
-    #[skip_auto_default]
+    #[skip_auto_unwrap]
     let closure = || -> Result<u32, f32> {
         let ok: Result<u32, f32> = Ok(1);
         assert_eq!(ok?, ok.unwrap());

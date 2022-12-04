@@ -23,7 +23,7 @@ use auto_unwrap::auto_unwrap;
 
 #[auto_unwrap]
 fn fn_2() {
-    #[skip_auto_default] // skips until (and including) the next brace-delimited group or semicolon
+    #[skip_auto_unwrap] // skips until (and including) the next brace-delimited group or semicolon
     let closure = || -> Result<u32, f32> {
         let ok: Result<u32, f32> = Ok(1);
         assert_eq!(ok?, ok.unwrap());
