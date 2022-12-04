@@ -1,0 +1,15 @@
+[package]
+name = "auto_unwrap"
+version = "1.0.0"
+authors = ["AspiringLich"]
+description = "A small proc-macro that replaces instances of `?` with `.unwrap()`"
+# edition = "2022"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate_type = ["proc-macro"]
+
+[dependencies]
+# macro stuff
+syn = "1.0"
