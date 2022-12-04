@@ -1,6 +1,6 @@
 [package]
 name = "auto_unwrap"
-version = "1.0.2"
+version = "1.1.0"
 authors = ["AspiringLich"]
 description = "A small proc-macro that replaces instances of `?` with `.unwrap()`"
 keywords = ["unwrap", "macro", "proc-macro"]
