@@ -40,4 +40,6 @@ fn fn_2() {
 
 this is updated from some previous code i wrote: [yauc](https://github.com/aspiringLich/yauc)
 
-Honestly you probably shouldn't use this.
+I made this for one specific use case: Bevy systems. With all the queries you have to do there can be a lot of `.unwrap()`'s necessary, and that gets annoying.
+
+Probably better practice to use `.except()` but eh. And I made this mostly to learn how to do procedural macros anyway.
